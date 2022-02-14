@@ -1,9 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const port = process.env.PORT || 3005;
 
 //API security
 app.use(helmet());
@@ -11,14 +13,28 @@ app.use(helmet());
 //hanlde CORS error
 app.use(cors());
 
+//MongoDB connection
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URL);
+
+if (process.env.MODE_ENV !== "production") {
+  const monDB = mongoose.connection;
+  monDB.on("open", () => {
+    console.log("MongoDB is connected");
+  });
+
+  monDB.on("error", (error) => {
+    console.log(error);
+  });
+}
+
 //Logger
 app.use(morgan("tiny"));
 
 // set body bodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-const port = process.env.PORT || 3005;
 
 //load routers
 const userRouter = require("./src/routers/user.router");
