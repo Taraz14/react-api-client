@@ -1,0 +1,29 @@
+{
+  "name": "client-api",
+  "version": "1.0.0",
+  "description": "Api for client ticket system hehe",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taraz14/react-api-client.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Bonaventura Dimas Paska Pradhana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Taraz14/react-api-client/issues"
+  },
+  "homepage": "https://github.com/Taraz14/react-api-client#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "helmet": "^5.0.2",
+    "morgan": "^1.10.0"
+  }
+}
