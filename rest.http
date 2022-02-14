@@ -1,0 +1,22 @@
+### User endpoint
+POST 127.0.0.1:3005/d/user
+Content-Type: application/json
+
+{
+    "name" : "Dimas",
+    "company" : "self",
+    "address" : "jl. min",
+    "phone" : "081393484770",
+    "email" : "dimaz2.taraz@gmail.com",
+    "username" : "dantex",
+    "password" : "taraz1458"
+}
+
+### User endpoint
+POST 127.0.0.1:3005/d/user/login
+Content-Type: application/jsson
+
+{
+    "username" : "dantex",
+    "password" : "taraz1458"
+}

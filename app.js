@@ -41,8 +41,8 @@ const userRouter = require("./src/routers/user.router");
 const ticketRouter = require("./src/routers/ticket.router");
 
 //use Router
-app.use("/v1/user", userRouter);
-app.use("/v1/ticket", ticketRouter);
+app.use("/d/user", userRouter);
+app.use("/d/ticket", ticketRouter);
 
 app.use((req, res, next) => {
   const error = new Error("Resource not found!");
